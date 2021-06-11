@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Most Frequent Words", "Most Frequent Words\Most Frequent Words.csproj", "{35C2570C-BD20-434C-A354-C45F73893E88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Are They Same", "Are They Same\Are They Same.csproj", "{94005FDE-2FAB-4369-A945-3139B0A2412C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{35C2570C-BD20-434C-A354-C45F73893E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35C2570C-BD20-434C-A354-C45F73893E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35C2570C-BD20-434C-A354-C45F73893E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94005FDE-2FAB-4369-A945-3139B0A2412C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94005FDE-2FAB-4369-A945-3139B0A2412C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94005FDE-2FAB-4369-A945-3139B0A2412C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94005FDE-2FAB-4369-A945-3139B0A2412C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
