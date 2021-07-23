@@ -11,20 +11,8 @@ namespace Benchmarks
     [Orderer(SummaryOrderPolicy.FastestToSlowest)]
     public class Intervals
     {
-        private Interval[] Interval => new[] {(-101, 24), (-35, 27), (27, 53), (-105, 20), (-36, 26)};
-        private readonly Random _random = new();
-        
-        private Interval[] Populate(Interval[] intrvl)
-        {
-            return new[] {(-101, 24), (-35, 27), (27, 53), (-105, 20), (-36, 26)};
-            /*intrvl = new (int, int)[5]; 
-            for(var i = 0; i < 5; i ++)
-            {
-                intrvl[i].Item1 = _random.Next(20-10)-10;
-                intrvl[i].Item2 = _random.Next(20-10)-10;
-            }
-            return intrvl;*/
-        }
+        private static Interval[] Interval => new[] {(-101, 24), (-35, 27), (27, 53), (-105, 20), (-36, 26)};
+
 
         [Benchmark]
         public void SumIntervalsMySolutionLinq()
@@ -36,6 +24,12 @@ namespace Benchmarks
         public void SumIntervalsMySolutionNoLinq()
         {
             SumIntervalsMySolutionNoLinqInternal(Interval);
+        }
+        
+        [Benchmark]
+        public void SumIntervalsMySolutionNoLinqHashSet()
+        {
+            SumIntervalsMySolutionNoLinqInternalSet(Interval);
         }
         
         [Benchmark]
@@ -71,6 +65,21 @@ namespace Benchmarks
                 for(var k = intervals[i].Item1; k < intervals[i].Item2; k++)
                 {
                     if(!array.Contains(k))
+                        array.Add(k);
+                }
+            }
+
+            return array.Count;
+        }
+        
+        private static int SumIntervalsMySolutionNoLinqInternalSet((int, int)[] intervals)
+        {
+            var array = new HashSet<int>();
+            for (var i = 0; i < intervals.Length; i++)
+            {
+                for(var k = intervals[i].Item1; k < intervals[i].Item2; k++)
+                {
+                    if (!array.Contains(k))
                         array.Add(k);
                 }
             }
